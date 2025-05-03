@@ -45,10 +45,12 @@ Observação: os símbolos "--" são para marcar o início e fim.
 
 -- import telebot
 
-# Token do Bot
+Token do Bot
+
 bot = telebot.TeleBot('SEU_TOKEN')
 
-# Comandos que o bot escuta
+Comandos que o bot escuta
+
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(msg):
     bot.send_message(msg.chat.id, "Olá! Sou o bot da FURIA, pronto para te ajudar!")
@@ -57,9 +59,10 @@ def send_welcome(msg):
 def elenco(msg):
     bot.send_message(msg.chat.id, "Elenco atual da line de CS:GO da FURIA: ...")
 
-# Outros comandos seguem a mesma estrutura...
+Outros comandos seguem a mesma estrutura...
 
-# Bot escutando
+Bot escutando
+
 bot.infinity_polling() --
 
 # 1.5 Considerações
