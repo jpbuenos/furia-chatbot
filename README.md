@@ -7,6 +7,8 @@ Bot de Telegram: Um bot interativo desenvolvido em Python para fornecer informa�
 
 Landing Page: Uma página simples em HTML com informações sobre o time e links para o bot.
 
+Site da Landing Page: https://jpbuenos.github.io/furia-chatbot/
+
 # 1. Bot de Telegram - bot.py
 Descrição:
 O bot de Telegram é um assistente virtual para fãs da FURIA, oferecendo informações como o elenco atual do time, próximos jogos, resultados recentes, winrate dos mapas e ranking mundial.
