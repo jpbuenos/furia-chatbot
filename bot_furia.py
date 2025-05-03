@@ -38,7 +38,7 @@ def elenco(msg):
                                   "1. skullz\n"
                                   "2. chelo\n\n"
                                   "Coachs:\n"
-                                  "1. hepa\n"
+                                  "1. Hepa\n"
                                   "2. sidde\n")
 
 # Comando /jogos
@@ -67,9 +67,7 @@ def campeonatos(msg):
 # Comando /winrate
 @bot.message_handler(commands=['winrate'])
 def winrate(msg):
-    bot.send_message(msg.chat.id, "Winrate dos mapas abaixo:\n"
-                                  "Cache - 73.2%\n"
-                                  "Cobblestone - 70.6%\n"
+    bot.send_message(msg.chat.id, "Winrate dos mapas abaixo:\n
                                   "Train - 62.5%\n"
                                   "Vertigo - 61.2%\n"
                                   "Mirage - 60.8%\n"
