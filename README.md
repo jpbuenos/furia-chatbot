@@ -1,58 +1,113 @@
-# FURIA CS Bot 🐆🔥
+# Projeto: FURIA CS:GO Bot e Landing Page
 
-Este é um bot do Telegram desenvolvido para fãs do time de CS:GO da FURIA. Ele foi criado como parte do **Desafio #1**
+# Descrição
+Este projeto contém dois componentes principais:
 
-# Funcionalidades
+Bot de Telegram: Um bot interativo desenvolvido em Python para fornecer informações aos fãs do time de CS:GO da FURIA.
 
-- **/elenco**: Exibe o elenco atual da line de CS da FURIA.
-- **/jogos**: Mostra os próximos jogos do time.
-- **/jogosrecentes**: Exibe os resultados dos jogos mais recentes.
-- **/campeonatos**: Lista os campeonatos que a FURIA está participando ou participará.
-- **/winrate**: Mostra o winrate da line da FURIA nos mapas de CS:GO.
-- **/ranking**: Exibe o ranking atual da FURIA no cenário mundial de CS:GO.
+Landing Page: Uma página simples em HTML com informações sobre o time e links para o bot.
 
-# Como criar um bot
-Passo 1: Criar o Bot no Telegram
-Abra o Telegram e busque pelo BotFather.
+# 1. Bot de Telegram - bot.py
+Descrição:
+O bot de Telegram é um assistente virtual para fãs da FURIA, oferecendo informações como o elenco atual do time, próximos jogos, resultados recentes, winrate dos mapas e ranking mundial.
 
-Envie o comando /newbot para o BotFather.
+# Funcionalidades:
+O bot responde aos seguintes comandos:
 
-Siga as instruções para criar um nome e um username para o seu bot.
+/start ou /help: Inicia a conversa e exibe os comandos disponíveis.
 
-O BotFather fornecerá um token de acesso que será usado para autenticar o bot.
+/elenco: Mostra o elenco atual da line de CS:GO da FURIA.
 
-Passo 2: Configuração do Projeto
-Instalar Dependências
-Para rodar o bot, você precisará do Python e das bibliotecas necessárias. Siga os passos abaixo:
+/jogos: Exibe os próximos jogos da FURIA.
 
-Instale as dependências necessárias:
+/jogosrecentes: Exibe os resultados dos jogos recentes.
 
-Use o comando abaixo para instalar as bibliotecas:
+/campeonatos: Exibe os campeonatos futuros nos quais a FURIA estará participando.
 
-pip install pyTelegramBotAPI python-dotenv
+/winrate: Exibe o winrate dos mapas atuais.
 
-Configurar o token do bot:
+/ranking: Exibe o ranking atual da FURIA.
 
-Crie um arquivo .env na raiz do seu projeto e adicione o token gerado pelo BotFather:
+# 1.1 Como rodar o bot
+Instalar dependências:
+Antes de rodar o bot, instale as dependências necessárias. Se você não tiver o telebot instalado, basta rodar o seguinte comando:
+pip install pyTelegramBotAPI
 
-TELEGRAM_BOT_TOKEN=seu-token-aqui
-
-Passo 3: Rodando o Bot
-Baixe ou clone o repositório:
-
-Caso ainda não tenha o código localmente, use o comando abaixo para clonar o repositório:
-
-git clone https://github.com/SEU_USUARIO/furia-chatbot.git
-
-Execute o código:
-
-Após garantir que as dependências estão instaladas, execute o bot com o seguinte comando:
-
+# 1.2 Rodar o bot:
+Para rodar o bot, basta executar o script bot.py:
 python bot.py
 
-Passo 4: Testando o Bot
-Abra o Telegram e busque pelo seu bot usando o username que você configurou no BotFather.
+# 1.3 Interagir com o bot:
+Após rodar o bot, você pode interagir com ele no Telegram. Envie os comandos listados e ele responderá com as informações correspondentes.
 
-Inicie a conversa com o bot enviando o comando /start.
+# 1.4 Estrutura resumida do Código
+Observação: os símbolos "--" são para marcar o início e fim.
 
-Experimente os comandos: Você pode testar comandos como /elenco, /jogos, /winrate, entre outros, para ver como o bot responde.
+-- import telebot
+
+# Token do Bot
+bot = telebot.TeleBot('SEU_TOKEN')
+
+# Comandos que o bot escuta
+@bot.message_handler(commands=['start', 'help'])
+def send_welcome(msg):
+    bot.send_message(msg.chat.id, "Olá! Sou o bot da FURIA, pronto para te ajudar!")
+
+@bot.message_handler(commands=['elenco'])
+def elenco(msg):
+    bot.send_message(msg.chat.id, "Elenco atual da line de CS:GO da FURIA: ...")
+
+# Outros comandos seguem a mesma estrutura...
+
+# Bot escutando
+bot.infinity_polling() --
+
+# 1.5 Considerações
+Certifique-se de substituir 'SEU_TOKEN' pelo token do seu bot, que você pode obter através do BotFather no Telegram.
+
+O bot usa a biblioteca pyTelegramBotAPI, que facilita a comunicação com a API do Telegram.
+
+# 2. Landing Page - index.html
+Descrição
+A landing page em HTML foi criada para fornecer informações rápidas sobre a FURIA, incluindo links para interagir com o bot e acompanhar o time. A página é simples e responsiva, com foco nas informações chave para os fãs de CS:GO.
+
+# 2.1 Estrutura do Arquivo
+O arquivo index.html contém uma estrutura básica de uma página web com um título, subtítulo, links e uma breve descrição do projeto.
+
+Conteúdo do index.html
+
+Observação: os símbolos "--" são para marcar o início e fim.
+
+-- <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FURIA CS:GO Bot</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Bot da FURIA</h1>
+    <p>Interaja com o nosso bot de Telegram para saber tudo sobre o time de CS:GO da FURIA!</p>
+    <ul>
+        <li><a href="https://wa.me/5511993404466" target="_blank">Interagir com o bot no Telegram</a></li>
+        <li><a href="https://www.hltv.org/team/5316/furia" target="_blank">Visite o site oficial da FURIA</a></li>
+    </ul>
+</body>
+</html> --
+
+# 2.2 Como Rodar a Landing Page
+Abrir no Navegador:
+
+Basta abrir o arquivo index.html diretamente no seu navegador para visualizar a página.
+
+Subir para o GitHub:
+
+Você pode subir o arquivo HTML para o GitHub e utilizar o GitHub Pages para hospedar a página de forma gratuita.
+
+# 2.3 Considerações
+A página HTML não possui estilização avançada, mas você pode melhorar o design futuramente com CSS ou JavaScript.
+
+O link do bot do Telegram está configurado para abrir diretamente no Telegram Web (você pode mudar para o link do seu bot específico).
+
+
+
